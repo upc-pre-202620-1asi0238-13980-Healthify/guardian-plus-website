@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Guardian+ Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Landing page of Guardian+, the remote care and monitoring solution by Healthify. It presents the value proposition, the product capabilities, the subscription plans and a contact form for families and caregivers.
 
-## Available Scripts
+## Tech stack
 
-In the project directory, you can run:
+- React 19 with Create React App (`react-scripts` 5.0.1)
+- Plain CSS with design tokens from the Guardian+ Style Guidelines
+- [Lucide](https://lucide.dev) icons
+- Jest and React Testing Library
 
-### `npm start`
+## Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm ci
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The site runs at [http://localhost:3000](http://localhost:3000).
 
-### `npm test`
+| Script | Description |
+| --- | --- |
+| `npm start` | Runs the development server. |
+| `npm test` | Runs the test suite in watch mode. |
+| `npm run build` | Builds the production bundle in `build/`. |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Environment variables
 
-### `npm run build`
+Copy `.env.example` to `.env.local` and fill in the values when they are available.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Variable | Description |
+| --- | --- |
+| `REACT_APP_CONTACT_ENDPOINT` | Endpoint that receives the contact form requests. When empty, the submission is simulated. |
+| `REACT_APP_APP_DOWNLOAD_URL` | Mobile app download or sign-up URL used by the plan buttons. When empty, the buttons lead to the contact section. |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```text
+src/
+├── assets/          # Images and app screens exported from Figma
+├── components/
+│   ├── common/      # Reusable UI: Button, Logo, SectionHeading
+│   ├── layout/      # Header and Footer
+│   └── sections/    # One folder per landing page section
+├── config/          # Navigation and external links
+├── data/            # Landing page content
+├── hooks/           # Scroll related hooks
+├── services/        # Contact request submission
+├── styles/          # Design tokens and base styles
+└── utils/           # Form validation
+```
 
-### `npm run eject`
+## Sections
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Section | Anchor | User Story |
+| --- | --- | --- |
+| Header and navigation | — | US30 |
+| Cómo funciona | `#how-it-works` | US30 |
+| La pulsera Guardian+ | — | US31 |
+| Beneficios | `#benefits` | US31 |
+| La app por dentro | — | US31 |
+| Zonas seguras | — | US31 |
+| Por qué Guardian+ | `#why-guardian` | US31 |
+| Precios | `#pricing` | US33 |
+| Contacto | `#contact` | US32 |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The site is deployed on Cloudflare Pages from the `main` branch using the `Create React App` preset, `npm run build` as build command, `build` as output directory and `NODE_VERSION=20` as environment variable. Pull requests get a preview deployment on a `*.pages.dev` URL.

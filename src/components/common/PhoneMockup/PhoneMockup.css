@@ -1,0 +1,205 @@
+/*
+ * Proportions follow an iPhone 15 Pro (393 × 852 pt display).
+ * Every measurement derives from --phone-width so the device scales cleanly.
+ */
+.phone {
+  --phone-width: 300px;
+  --unit: calc(var(--phone-width) / 100);
+  position: relative;
+  flex-shrink: 0;
+  width: var(--phone-width);
+  padding: calc(var(--unit) * 3.6);
+  border-radius: calc(var(--unit) * 17);
+  background: linear-gradient(145deg, #62686c 0%, #2b2f32 18%, #1a1c1e 50%, #2b2f32 82%, #585e62 100%);
+  box-shadow:
+    inset 0 0 0 calc(var(--unit) * 0.45) #8a9094,
+    inset 0 0 0 calc(var(--unit) * 1.1) #121416,
+    0 calc(var(--unit) * 14) calc(var(--unit) * 24) calc(var(--unit) * -10) rgba(18, 49, 40, 0.45),
+    0 calc(var(--unit) * 4) calc(var(--unit) * 8) rgba(18, 49, 40, 0.12);
+}
+
+.phone__button {
+  position: absolute;
+  width: calc(var(--unit) * 1.1);
+  border-radius: calc(var(--unit) * 0.6);
+  background: linear-gradient(90deg, #1d2022, #6b7175 60%, #2a2e31);
+}
+
+.phone__button--action {
+  top: 17%;
+  left: calc(var(--unit) * -0.9);
+  height: calc(var(--unit) * 7);
+}
+
+.phone__button--volume-up {
+  top: 25%;
+  left: calc(var(--unit) * -0.9);
+  height: calc(var(--unit) * 13);
+}
+
+.phone__button--volume-down {
+  top: 33%;
+  left: calc(var(--unit) * -0.9);
+  height: calc(var(--unit) * 13);
+}
+
+.phone__button--power {
+  top: 28%;
+  right: calc(var(--unit) * -0.9);
+  height: calc(var(--unit) * 20);
+}
+
+.phone__display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 393 / 852;
+  overflow: hidden;
+  border-radius: calc(var(--unit) * 13.6);
+  background: var(--phone-screen-bg, #f8fbf9);
+  isolation: isolate;
+}
+
+.phone__status-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  height: calc(var(--unit) * 13.7);
+  padding: 0 calc(var(--unit) * 7.5) 0 calc(var(--unit) * 10);
+  background: var(--phone-screen-bg, #f8fbf9);
+  color: #0d1a16;
+}
+
+.phone__time {
+  font-family: -apple-system, "SF Pro Text", var(--font-body);
+  font-size: calc(var(--unit) * 4.3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.phone__island {
+  position: absolute;
+  top: calc(var(--unit) * 2.9);
+  left: 50%;
+  width: calc(var(--unit) * 31);
+  height: calc(var(--unit) * 9.2);
+  border-radius: var(--radius-full);
+  background: #050606;
+  transform: translateX(-50%);
+}
+
+.phone__indicators {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--unit) * 1.4);
+}
+
+.phone__indicators svg {
+  height: calc(var(--unit) * 3);
+  fill: currentColor;
+}
+
+.phone__indicators .phone__battery {
+  height: calc(var(--unit) * 3.3);
+}
+
+.phone__battery-shell {
+  fill: none;
+  stroke: currentColor;
+  opacity: 0.4;
+}
+
+.phone__viewport {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  container-type: size;
+}
+
+.phone__screen {
+  width: 100%;
+  height: auto;
+}
+
+.phone--with-nav .phone__viewport::after {
+  content: "";
+  display: block;
+  height: calc(var(--unit) * 24);
+}
+
+.phone--scroll .phone__viewport {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.phone--scroll .phone__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.phone--auto .phone__screen {
+  animation: phone-auto-scroll 18s ease-in-out infinite;
+}
+
+.phone--with-nav.phone--auto .phone__screen {
+  --phone-nav-space: 22cqw;
+}
+
+.phone--auto:hover .phone__screen {
+  animation-play-state: paused;
+}
+
+@keyframes phone-auto-scroll {
+  0%,
+  12% {
+    transform: translateY(0);
+  }
+
+  50%,
+  62% {
+    transform: translateY(calc(100cqh - var(--screen-ratio) * 100cqw - var(--phone-nav-space, 0px)));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.phone__nav {
+  position: absolute;
+  right: 0;
+  bottom: calc(var(--unit) * 3);
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  pointer-events: none;
+}
+
+.phone__home-indicator {
+  position: absolute;
+  bottom: calc(var(--unit) * 1.8);
+  left: 50%;
+  z-index: 3;
+  width: 36%;
+  height: calc(var(--unit) * 1.4);
+  border-radius: var(--radius-full);
+  background: #0d1a16;
+  transform: translateX(-50%);
+}
+
+.phone__glare {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 28%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone--auto .phone__screen {
+    animation: none;
+  }
+}
