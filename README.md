@@ -37,7 +37,7 @@ Copy `.env.example` to `.env.local` and fill in the values when they are availab
 
 ```text
 src/
-├── assets/          # Images
+├── assets/          # Images and app screens exported from Figma
 ├── components/
 │   ├── common/      # Reusable UI: Button, Logo, SectionHeading
 │   ├── layout/      # Header and Footer
@@ -56,7 +56,10 @@ src/
 | --- | --- | --- |
 | Header and navigation | — | US30 |
 | Cómo funciona | `#how-it-works` | US30 |
+| La pulsera Guardian+ | — | US31 |
 | Beneficios | `#benefits` | US31 |
+| La app por dentro | — | US31 |
+| Zonas seguras | — | US31 |
 | Por qué Guardian+ | `#why-guardian` | US31 |
 | Precios | `#pricing` | US33 |
 | Contacto | `#contact` | US32 |
