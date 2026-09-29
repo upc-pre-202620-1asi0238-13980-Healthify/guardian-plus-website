@@ -175,3 +175,91 @@ export const CARE_RECIPIENT_OPTIONS = [
   { value: "patient", label: "Una persona a mi cargo como cuidador" },
   { value: "other", label: "Otra persona" },
 ];
+
+export const WRISTBAND_FEATURES = [
+  {
+    id: "sos",
+    title: "Botón SOS",
+    description: "Una pulsación larga avisa de inmediato a los contactos de emergencia.",
+  },
+  {
+    id: "im-fine",
+    title: "Estoy bien",
+    description: "Tras una advertencia, la persona confirma en 30 segundos que está a salvo.",
+  },
+  {
+    id: "vital-signs",
+    title: "Sensores de signos vitales",
+    description: "Ritmo cardíaco, oxígeno, temperatura y respiración durante todo el día.",
+  },
+  {
+    id: "fall-detection",
+    title: "Detección de caídas",
+    description: "Reconoce un impacto brusco y abre la ventana de confirmación.",
+  },
+  {
+    id: "gps",
+    title: "GPS integrado",
+    description: "Comparte la ubicación en tiempo real con el círculo de cuidado.",
+  },
+  {
+    id: "reminders",
+    title: "Recordatorios con vibración",
+    description: "Avisa la medicación con una vibración suave y se confirma con un toque.",
+  },
+];
+
+export const APP_TOUR = [
+  {
+    id: "home",
+    label: "Inicio",
+    title: "Todo de un vistazo",
+    description:
+      "El estado de la persona, sus signos vitales, lo próximo en su rutina y la última alerta, en una sola pantalla.",
+    screen: "home",
+  },
+  {
+    id: "alerts",
+    label: "Alertas",
+    title: "Avisos que se entienden",
+    description:
+      "Cada notificación llega con su nivel de urgencia: una posible caída nunca se ve igual que un recordatorio.",
+    screen: "notifications",
+  },
+  {
+    id: "video-call",
+    label: "Videollamada",
+    title: "Conversa y acompaña",
+    description: "Habla cara a cara con Elena mientras ves su ritmo cardíaco, oxígeno y temperatura en vivo.",
+    screen: "videoCall",
+  },
+  {
+    id: "status-check",
+    label: "Verificación",
+    title: "Siempre hay una forma de contactar",
+    description:
+      "Si su pulsera no tiene altavoz, la app te propone llamar a su celular o a la persona que la acompaña.",
+    screen: "statusCheck",
+  },
+];
+
+export const SAFE_ZONE_STEPS = [
+  {
+    id: "define",
+    title: "Define sus lugares",
+    description: "Hogar, parque o club: tú decides dónde está segura y el radio de cada zona.",
+    screen: "safeZones",
+  },
+  {
+    id: "alert",
+    title: "Te avisamos si sale",
+    description: "Recibes la alerta con la distancia y su última posición para llamarla o ir a buscarla.",
+    screen: "perimeterAlert",
+  },
+  {
+    id: "return",
+    title: "Confirmamos su regreso",
+    description: "Cuando vuelve a la zona, la alerta se cierra sola y la vigilancia sigue su curso.",
+    screen: "perimeterMonitoring",
+  },
+];
