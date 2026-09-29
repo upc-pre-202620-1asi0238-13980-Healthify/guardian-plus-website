@@ -1,6 +1,6 @@
 {
   "name": "guardian-plus-website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.2",
@@ -14,8 +14,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "node init && react-scripts start",
+    "build": "node init && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
