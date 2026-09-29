@@ -1,0 +1,125 @@
+.why-guardian {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-primary-deep);
+  color: var(--color-on-dark);
+}
+
+.why-guardian__ring {
+  position: absolute;
+  top: -128px;
+  right: -128px;
+  width: 400px;
+  height: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-full);
+}
+
+.why-guardian__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-12) var(--space-24);
+}
+
+.why-guardian__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.why-guardian__item {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.why-guardian__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--color-on-dark);
+}
+
+.why-guardian__item-title {
+  font-size: var(--font-size-body-lg);
+  font-weight: 600;
+}
+
+.why-guardian__item-description {
+  margin-top: var(--space-1);
+  color: var(--color-on-dark-muted);
+  font-size: var(--font-size-body);
+}
+
+.testimonial {
+  padding: var(--space-8) var(--space-8) var(--space-8) var(--space-12);
+  border-radius: var(--radius-panel);
+  background: var(--color-card);
+  color: var(--color-card-foreground);
+  box-shadow: var(--shadow-float);
+}
+
+.testimonial__icon {
+  color: var(--color-secondary-foreground);
+}
+
+.testimonial__quote {
+  margin-top: var(--space-6);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1rem + 0.8vw, 1.5rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.testimonial__author strong {
+  display: block;
+  font-size: var(--font-size-body);
+  font-weight: 600;
+}
+
+.testimonial__author small {
+  display: block;
+  color: var(--color-muted-foreground);
+  font-size: var(--font-size-caption);
+}
+
+.testimonial__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+}
+
+@media (max-width: 899px) {
+  .why-guardian__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial {
+    padding: var(--space-6);
+    border-radius: var(--radius-large);
+  }
+}
