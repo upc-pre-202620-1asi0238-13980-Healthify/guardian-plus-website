@@ -10,7 +10,6 @@
 /build
 
 # environment
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -23,4 +22,4 @@ yarn-error.log*
 # editors and OS
 .DS_Store
 .idea/
-.vscode/
+config.bat
