@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/layout/Header/Header";
+import Footer from "./components/layout/Footer/Footer";
+import HeroSection from "./components/sections/HeroSection/HeroSection";
+import PainPointsSection from "./components/sections/PainPointsSection/PainPointsSection";
+import HowItWorksSection from "./components/sections/HowItWorksSection/HowItWorksSection";
+import BenefitsSection from "./components/sections/BenefitsSection/BenefitsSection";
+import WhyGuardianSection from "./components/sections/WhyGuardianSection/WhyGuardianSection";
+import PricingSection from "./components/sections/PricingSection/PricingSection";
+import ContactSection from "./components/sections/ContactSection/ContactSection";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <a className="skip-link" href="#main-content">
+        Saltar al contenido
+      </a>
+      <Header />
+      <main id="main-content">
+        <HeroSection />
+        <PainPointsSection />
+        <HowItWorksSection />
+        <BenefitsSection />
+        <WhyGuardianSection />
+        <PricingSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
   );
 }
 
