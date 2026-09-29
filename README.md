@@ -66,4 +66,4 @@ src/
 
 ## Deployment
 
-The site is deployed on Cloudflare Pages from the `main` branch using the `Create React App` preset, `npm run build` as build command, `build` as output directory and `NODE_VERSION=20` as environment variable. Pull requests get a preview deployment on a `*.pages.dev` URL.
+The site is deployed on Cloudflare Pages from the `main` branch using the `Create React App` preset, `npm run build` as build command, `build` as output directory and `NODE_VERSION=24` as environment variable. Pull requests get a preview deployment on a `*.pages.dev` URL.
