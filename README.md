@@ -66,4 +66,4 @@ src/
 
 ## Deployment
 
-The site is deployed on Vercel from the `main` branch using the `Create React App` preset, `npm ci` as install command, `npm run build` as build command and `build` as output directory.
+The site is deployed on Cloudflare Pages from the `main` branch using the `Create React App` preset, `npm run build` as build command, `build` as output directory and `NODE_VERSION=20` as environment variable. Pull requests get a preview deployment on a `*.pages.dev` URL.
