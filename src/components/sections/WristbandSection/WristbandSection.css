@@ -1,0 +1,135 @@
+.wristband-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(79, 195, 161, 0.16) 0%, rgba(79, 195, 161, 0) 55%),
+    var(--color-accent-foreground);
+  color: var(--color-on-dark);
+}
+
+.wristband-section__stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-12);
+  margin-top: var(--space-12);
+}
+
+.wristband-section__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.wristband-section__features--start {
+  text-align: right;
+}
+
+.wristband-section__feature {
+  position: relative;
+}
+
+.wristband-section__marker {
+  position: absolute;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: #4fc3a1;
+  box-shadow: 0 0 0 6px rgba(79, 195, 161, 0.18);
+}
+
+.wristband-section__features--start .wristband-section__marker {
+  right: -32px;
+}
+
+.wristband-section__features--end .wristband-section__marker {
+  left: -32px;
+}
+
+.wristband-section__feature-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+}
+
+.wristband-section__feature-description {
+  margin-top: var(--space-1);
+  color: var(--color-on-dark-muted);
+  font-size: var(--font-size-body);
+  line-height: 1.7;
+}
+
+.wristband-section__product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.wristband-section__halo {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  box-shadow:
+    0 0 0 48px rgba(255, 255, 255, 0.03),
+    0 0 0 96px rgba(255, 255, 255, 0.02);
+  transform: translateX(-50%);
+}
+
+.wristband-section__device {
+  position: relative;
+  width: 240px;
+  height: auto;
+  filter: drop-shadow(0 40px 40px rgba(0, 0, 0, 0.35));
+}
+
+.wristband-section__badge {
+  position: relative;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--color-on-dark-muted);
+  font-size: var(--font-size-caption);
+  font-weight: 500;
+}
+
+@media (max-width: 1023px) {
+  .wristband-section__stage {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+
+  .wristband-section__product {
+    order: -1;
+  }
+
+  .wristband-section__device {
+    width: 200px;
+  }
+
+  .wristband-section__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .wristband-section__features--start {
+    text-align: left;
+  }
+
+  .wristband-section__feature {
+    padding-left: var(--space-6);
+  }
+
+  .wristband-section__features--start .wristband-section__marker,
+  .wristband-section__features--end .wristband-section__marker {
+    right: auto;
+    left: 0;
+  }
+}

@@ -1,0 +1,229 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 7vw, 96px) 0 clamp(64px, 8vw, 112px);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+}
+
+.hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-display);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: var(--letter-spacing-display);
+  color: var(--color-foreground);
+}
+
+.hero__description {
+  max-width: 540px;
+  color: var(--color-muted-foreground);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-2);
+}
+
+.hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+}
+
+.hero__highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-muted-foreground);
+  font-size: var(--font-size-body);
+}
+
+.hero__highlight svg {
+  color: var(--color-primary);
+}
+
+.hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 640px;
+  padding: var(--space-4) 0;
+}
+
+.hero__glow {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  width: 560px;
+  height: 560px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, var(--color-secondary) 0%, var(--color-surface-mint) 55%, rgba(231, 245, 239, 0) 72%);
+  transform: translateX(-42%);
+}
+
+.hero__phone {
+  --phone-width: 292px;
+  z-index: 1;
+  transform: translateX(24px) rotate(2deg);
+}
+
+.hero__wristband {
+  position: absolute;
+  bottom: -8px;
+  left: 2%;
+  z-index: 2;
+  width: 158px;
+  height: auto;
+  transform: rotate(-14deg);
+  filter: drop-shadow(0 24px 30px rgba(18, 49, 40, 0.25));
+}
+
+.hero__chip {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid rgba(207, 224, 216, 0.7);
+  border-radius: var(--radius-default);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-high);
+  backdrop-filter: blur(8px);
+}
+
+.hero__chip strong {
+  display: block;
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+}
+
+.hero__chip small {
+  display: block;
+  color: var(--color-muted-foreground);
+  font-size: 0.6875rem;
+}
+
+.hero__chip--status {
+  top: 2%;
+  right: -4%;
+}
+
+.hero__chip--sync {
+  top: 38%;
+  left: -2%;
+}
+
+.hero__chip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.hero__chip-icon--live {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+@media (max-width: 1023px) {
+  .hero__chip--status {
+    right: 0;
+  }
+
+  .hero__chip--sync {
+    left: 0;
+  }
+}
+
+@media (max-width: 899px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero__visual {
+    min-height: 0;
+    padding-bottom: var(--space-8);
+  }
+
+  .hero__phone {
+    transform: none;
+  }
+
+  .hero__wristband {
+    left: 4%;
+    width: 140px;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero__phone {
+    --phone-width: 248px;
+    transform: translateX(28px);
+  }
+
+  .hero__wristband {
+    bottom: 0;
+    left: -6px;
+    width: 112px;
+  }
+
+  .hero__chip--status {
+    top: 0;
+    right: -6px;
+  }
+
+  .hero__chip--sync {
+    display: none;
+  }
+}
